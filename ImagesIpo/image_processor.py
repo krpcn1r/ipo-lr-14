@@ -5,10 +5,8 @@ class ImageProcessor:
     def __init__(self, path):
         self.handler = ImageHandler(path)
         self.handler.load()
-        # всегда переводим в RGB
         self.image = self.handler.get_image().convert("RGB")
 
-        # добавляем обычный белый текст
         txt = ImageDraw.Draw(self.image)
         font = ImageFont.truetype("arial.ttf", 40)
         txt.text((20, 20), "Вариант 2", font=font, fill=(255, 255, 255))
